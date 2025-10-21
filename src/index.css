@@ -1,0 +1,165 @@
+/* postcss-preset-env syntax */
+/* tailwindcss/base */
+@tailwind base;
+/* tailwindcss/components */
+@tailwind components;
+/* tailwindcss/utilities */
+@tailwind utilities;
+
+@import './styles/animations.css';
+@import './styles/music-player.css';
+
+@layer components {
+  .img-cover {
+    @apply w-full h-full object-cover;
+  }
+  
+  .slider-image {
+    @apply w-full h-full object-cover rounded-xl transition-transform duration-500;
+  }
+
+  .photo-container {
+    @apply relative aspect-[4/3] md:aspect-[16/9] overflow-hidden rounded-xl;
+  }
+
+  .photo-gradient {
+    @apply absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100;
+  }
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+/* Styles globaux pour les images */
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  transition: transform 0.5s ease;
+}
+
+.photo-container {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .photo-container {
+    aspect-ratio: 16/9;
+  }
+}
+
+.photo-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .photo-gradient {
+  opacity: 1;
+}
+
+@layer base {
+  :root {
+    --background: 280 60% 98%;
+    --foreground: 280 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 280 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 50% 10%;
+
+    --primary: 330 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 70% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 30% 95%;
+    --muted-foreground: 280 20% 45%;
+
+    --accent: 45 95% 60%;
+    --accent-foreground: 280 50% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 30% 90%;
+    --input: 280 30% 90%;
+    --ring: 330 85% 60%;
+
+    --radius: 1rem;
+
+    /* Birthday theme colors */
+    --celebration-pink: 330 85% 60%;
+    --celebration-purple: 280 70% 65%;
+    --celebration-gold: 45 95% 60%;
+    --celebration-rose: 350 80% 70%;
+    
+    /* Gradients */
+    --gradient-celebration: linear-gradient(135deg, hsl(330 85% 60%), hsl(280 70% 65%), hsl(45 95% 60%));
+    --gradient-overlay: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 30px hsl(330 85% 60% / 0.3);
+    --shadow-card: 0 10px 40px hsl(280 70% 65% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 280 50% 8%;
+    --foreground: 280 30% 95%;
+
+    --card: 280 45% 12%;
+    --card-foreground: 280 30% 95%;
+
+    --popover: 280 45% 12%;
+    --popover-foreground: 280 30% 95%;
+
+    --primary: 330 85% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 70% 65%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 280 40% 18%;
+    --muted-foreground: 280 20% 65%;
+
+    --accent: 45 95% 60%;
+    --accent-foreground: 280 50% 10%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 280 40% 20%;
+    --input: 280 40% 20%;
+    --ring: 330 85% 60%;
+    
+    --gradient-overlay: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.2));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

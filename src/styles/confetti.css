@@ -1,0 +1,86 @@
+/* Confetti base styles */
+.confetti-piece {
+  position: absolute;
+  animation: confetti-fall ease-in-out forwards;
+}
+
+/* Shape variants */
+.confetti-piece.circle { border-radius: 50%; }
+.confetti-piece.square { border-radius: 2px; }
+
+/* Color variants */
+.confetti-color-0 { background-color: hsl(var(--celebration-pink)); }
+.confetti-color-1 { background-color: hsl(var(--celebration-purple)); }
+.confetti-color-2 { background-color: hsl(var(--celebration-gold)); }
+.confetti-color-3 { background-color: hsl(var(--celebration-rose)); }
+
+/* Position classes - Generated with steps of 5 for efficiency */
+.confetti-left-0 { left: 0%; }
+.confetti-left-5 { left: 5%; }
+.confetti-left-10 { left: 10%; }
+.confetti-left-15 { left: 15%; }
+.confetti-left-20 { left: 20%; }
+.confetti-left-25 { left: 25%; }
+.confetti-left-30 { left: 30%; }
+.confetti-left-35 { left: 35%; }
+.confetti-left-40 { left: 40%; }
+.confetti-left-45 { left: 45%; }
+.confetti-left-50 { left: 50%; }
+.confetti-left-55 { left: 55%; }
+.confetti-left-60 { left: 60%; }
+.confetti-left-65 { left: 65%; }
+.confetti-left-70 { left: 70%; }
+.confetti-left-75 { left: 75%; }
+.confetti-left-80 { left: 80%; }
+.confetti-left-85 { left: 85%; }
+.confetti-left-90 { left: 90%; }
+.confetti-left-95 { left: 95%; }
+.confetti-left-100 { left: 100%; }
+
+/* Size classes */
+.confetti-size-4 { width: 4px; height: 4px; }
+.confetti-size-6 { width: 6px; height: 6px; }
+.confetti-size-8 { width: 8px; height: 8px; }
+.confetti-size-10 { width: 10px; height: 10px; }
+.confetti-size-12 { width: 12px; height: 12px; }
+
+/* Animation delay classes */
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 1s; }
+.delay-2 { animation-delay: 2s; }
+.delay-3 { animation-delay: 3s; }
+
+/* Animation duration classes */
+.duration-3 { animation-duration: 3s; }
+.duration-4 { animation-duration: 4s; }
+.duration-5 { animation-duration: 5s; }
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .confetti-piece {
+    transform-origin: center;
+  }
+  
+  .confetti-size-10,
+  .confetti-size-12 {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Fall animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  
+  50% {
+    opacity: 0.8;
+  }
+  
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
