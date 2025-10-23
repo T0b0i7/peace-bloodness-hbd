@@ -5,6 +5,7 @@ Une application web interactive et émotionnelle créée pour célébrer l'anniv
 ## ✨ Aperçu
 
 ![Aperçu de l'application](public/img/sc1.PNG)
+ [Live demo sur Netlify](https://peace-bloodnesshbd.netlify.app/)
 
 Cette application est un cadeau d'anniversaire numérique qui combine :
 - 🎵 Un lecteur de musique personnalisé
